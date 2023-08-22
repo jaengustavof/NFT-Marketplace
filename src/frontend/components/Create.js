@@ -3,7 +3,8 @@ import { ethers } from "ethers";
 import { Row, Form, Button } from 'react-bootstrap';
 import { create as ipfsHttpClient } from 'ipfs-http-client';
 
-// Pending creentias for infura
+const projectId = '2SFSUpmPI68xGF8hJbufrqlW1vy';
+const projectSecret = 'a55e8b33848f8f0f0fe6046d9043eb1e';
 const credentials = projectId + ':' + projectSecret;
 const encodedCredentials = btoa(credentials);
 const authHeader = 'Basic ' + encodedCredentials;
@@ -17,7 +18,8 @@ const Create = ({ marketplace, nft }) => {
     const [name, setName] = useState('');
     const [description, setDescription] = useState('');
 
-  
+    // project ID - 3ecd8f60e2a64f2188c95c9e4b485b05
+    // Secret - cac499f33e78471f811a87be965f00e8
     const uploadToIPFS = async (event) =>{
         event.preventDefault();
         const file = event.target.files[0];
